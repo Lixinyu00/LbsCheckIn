@@ -4,12 +4,20 @@
     android:layout_height="match_parent"
     android:background="@mipmap/bg"
     android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="创建您的账号"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         android:background="@mipmap/loginbg"
         android:orientation="vertical">
 
@@ -41,8 +49,9 @@
                 android:layout_marginRight="10dp"
                 android:textColor="@color/white"
                 android:background="@null"
-                android:hint="             账号"
-                android:textColorHint="@color/white" />
+                android:hint="账号"
+                android:textColorHint="@color/white"
+                android:gravity="center"/>
         </LinearLayout>
         <ImageView
             android:layout_width="match_parent"
@@ -77,8 +86,9 @@
                 android:layout_marginRight="10dp"
                 android:textColor="@color/white"
                 android:background="@null"
-                android:hint="             密码"
-                android:textColorHint="@color/white"/>
+                android:hint="密码"
+                android:textColorHint="@color/white"
+                android:gravity="center"/>
         </LinearLayout>
         <ImageView
             android:layout_width="match_parent"
@@ -112,8 +122,9 @@
                 android:layout_marginRight="10dp"
                 android:textColor="@color/white"
                 android:background="@null"
-                android:hint="             姓名"
-                android:textColorHint="@color/white"/>
+                android:hint="姓名"
+                android:textColorHint="@color/white"
+                android:gravity="center"/>
         </LinearLayout>
         <ImageView
             android:layout_width="match_parent"
@@ -139,7 +150,7 @@
                 android:layout_marginLeft="10dp"/>
 
             <EditText
-                android:id="@+id/register_mail"
+                android:id="@+id/register_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -147,17 +158,44 @@
                 android:layout_marginRight="10dp"
                 android:textColor="@color/white"
                 android:background="@null"
-                android:hint="             邮箱"
-                android:textColorHint="@color/white"/>
+                android:hint="邮箱"
+                android:textColorHint="@color/white"
+                android:gravity="center"/>
         </LinearLayout>
     </LinearLayout>
 
+    <RadioGroup
+        android:id="@+id/rg_register_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_register_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="用户"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/rb_register_manger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="管理员"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RadioGroup>
     <Button
         android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@mipmap/button_bg"
         android:text="注册"
         android:textSize="20dp"

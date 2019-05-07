@@ -9,17 +9,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:text="登录"
+        android:layout_marginTop="30dp"
+        android:text="电子签到系统"
         android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="80dp"
         android:background="@mipmap/loginbg"
         android:orientation="vertical">
 
@@ -32,33 +32,35 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/id"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/id" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/line"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/line" />
 
             <EditText
-                android:id="@+id/et_login_id"
+                android:id="@+id/et_login_account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/white"
                 android:background="@null"
-                android:hint="账号"
                 android:gravity="center"
+                android:hint="账号/邮箱"
+                android:textColor="@color/white"
                 android:textColorHint="@color/white" />
         </LinearLayout>
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="5dp"
-            android:src="@mipmap/line_h"/>
+            android:src="@mipmap/line_h" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,15 +71,16 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/password"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/password" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/line"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/line" />
 
             <EditText
                 android:id="@+id/et_login_psd"
@@ -86,25 +89,52 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/white"
                 android:background="@null"
-                android:hint="密码"
                 android:gravity="center"
-                android:textColorHint="@color/white"
-                android:inputType="textPassword"/>
+                android:hint="密码"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
         </LinearLayout>
     </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_login_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_login_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="用户"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/rb_login_manger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="管理员"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@mipmap/button_bg"
         android:text="Go !"
-        android:textSize="20dp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -114,22 +144,22 @@
         android:layout_marginTop="10dp">
 
         <TextView
-            android:id="@+id/t_login_forget"
+            android:id="@+id/tv_login_forget"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="忘记密码"
-            android:textSize="15dp"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/t_login_rigister"
+            android:id="@+id/tv_login_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="5dp"
             android:text="注册"
-            android:textSize="15dp"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="15sp" />
     </RelativeLayout>
 
 </LinearLayout>

@@ -10,8 +10,8 @@ public class CheckInf extends BmobObject {
 
     private String user;
     private Integer type;
-    private Integer command;
-    private String checkinf;
+    private String command;
+    private String checkInf;
 
     public String getUser() {
         return user;
@@ -29,19 +29,19 @@ public class CheckInf extends BmobObject {
         this.type = type;
     }
 
-    public Integer getCommand() {
+    public String getCommand() {
         return command;
     }
 
-    public void setCommand(Integer command) {
+    public void setCommand(String command) {
         this.command = command;
     }
 
-    public String getCheckinf() {
-        return checkinf;
+    public String getCheckInf() {
+        return checkInf;
     }
 
-    public void setCheckinf(String checkinf) {
-        this.checkinf = checkinf;
+    public void setCheckInf(String checkInf) {
+        this.checkInf = checkInf;
     }
 }

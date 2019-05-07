@@ -1,5 +1,7 @@
 package com.lxy.lbscheckin.ui.logIn;
 
+import android.content.Context;
+
 import com.lxy.lbscheckin.ui.BasePresenter;
 import com.lxy.lbscheckin.ui.BaseView;
 
@@ -10,9 +12,12 @@ import com.lxy.lbscheckin.ui.BaseView;
 public class LogInContract {
 
     interface View extends BaseView<Presenter>{
-
+        Context getContext();
+        void finishActivity();
     }
     interface Presenter extends BasePresenter{
-
+        void forget();
+        void logIn(String account,String psd,int type);
+        void register();
     }
 }

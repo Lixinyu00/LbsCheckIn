@@ -17,6 +17,9 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
 
 
     <application
@@ -26,6 +29,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data android:name="com.baidu.lbsapi.API_KEY"
+            android:value="jl6FHLbch0eZMd9nBRVOpInpyTZnVpsf"/>
+
         <service android:name=".common.services.WifiCheckServices"/>
         <activity android:name=".ui.logIn.LogInActivity">
             <intent-filter>
@@ -34,8 +41,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.mainPage.MainPageActivity"/>
+        <activity android:name=".ui.setCheck.SetCheckActivity"/>
         <activity android:name=".ui.register.RegisterActivity"/>
-        <activity android:name=".ui.checkIn.CheckInActivity"/>
+        <activity android:name=".ui.forgetPsd.ForgetPsdActivity"/>
+        <activity android:name=".ui.wifiCheckIn.CheckInActivity"/>
+        <activity android:name=".ui.lbsCheckIn.LbsCheckInActivity"/>
+        <activity android:name=".ui.checkedInf.CheckedInfActivity"/>
     </application>
 
 </manifest>

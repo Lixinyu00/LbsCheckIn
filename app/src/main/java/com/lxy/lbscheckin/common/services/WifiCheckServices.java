@@ -37,6 +37,7 @@ public class WifiCheckServices extends Service {
     private WifiCheckBinder wificheckbinder = new WifiCheckBinder();
     private String BSSID;
     private String user;
+    private String command;
 
     private boolean quit = false;
     private int quit_sign = 0;
@@ -60,7 +61,6 @@ public class WifiCheckServices extends Service {
                         wifiM = (WifiManager) context.getApplicationContext().getSystemService(WIFI_SERVICE);
                         wifiM.startScan();
                         List<ScanResult> mData = wifiM.getScanResults();
-                        Log.e("12", "run: " + mData);
                         //循环查找是否有符合的wifi
                         for (ScanResult a : mData) {
                             if (a.BSSID.equals(BSSID)) {
@@ -75,12 +75,12 @@ public class WifiCheckServices extends Service {
                                 CheckIn checkIn=new CheckIn();
                                 checkIn.setUser(user);
                                 checkIn.setType(0);
-                                checkIn.setMac(BSSID);
+                                checkIn.setCheckInf(BSSID);
+                                checkIn.setCommand(command);
                                 checkIn.save(new SaveListener<String>() {
                                     @Override
                                     public void done(String s, BmobException e) {
                                         if (e==null){
-                                            Log.e("123", "done: " );
                                             quit_sign++;
                                             setNotify(context, 0);
                                         }
@@ -115,7 +115,8 @@ public class WifiCheckServices extends Service {
         // TODO: Return the communication channel to the service.
         Bundle bundle = (Bundle) intent.getExtras();
         BSSID = bundle.getString("BSSID");
-        user=bundle.getString("user");
+        user=bundle.getString("name");
+        command=bundle.getString("command");
         return wificheckbinder;
     }
 
